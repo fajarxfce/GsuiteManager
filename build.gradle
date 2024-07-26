@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    google()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation 'com.google.api-client:google-api-client:1.33.0'
+    implementation 'com.google.apis:google-api-services-admin-directory:directory_v1-rev20220919-2.0.0'
+    implementation 'com.google.oauth-client:google-oauth-client-jetty:1.33.3'
+    implementation 'com.google.apis:google-api-services-siteVerification:v1-rev20191119-2.0.0'
+    implementation group: 'com.google.api-client', name: 'google-api-client-jackson2', version: '1.20.0'
+
+    implementation group: 'com.google.auth', name: 'google-auth-library-oauth2-http', version: '0.1.0'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDir 'src/main/resources'
+        }
+    }
+}
